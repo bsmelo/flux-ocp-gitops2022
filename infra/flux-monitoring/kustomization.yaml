@@ -4,3 +4,4 @@ resources:
   - podmonitor.yaml
   - role.yaml
   - rolebinding.yaml
+  - namespace.yaml
