@@ -1,0 +1,51 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: policy-engine-kyverno
+  namespace: flux-system
+spec:
+  interval: 5m
+  sourceRef:
+    kind: GitRepository
+    name: platform-team
+  path: ./infra/policy-engine-kyverno
+  prune: true
+  validation: client
+  healthChecks:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: kyverno
+      namespace: kyverno
+# ---
+# apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+# kind: Kustomization
+# metadata:
+#   name: policy-template
+#   namespace: flux-system
+# spec:
+#   dependsOn:
+#     - name: policy-engine
+#   interval: 5m
+#   sourceRef:
+#     kind: GitRepository
+#     name: platform-team
+#   path: ./infra/policy-template
+#   prune: true
+#   validation: client
+# ---
+# apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+# kind: Kustomization
+# metadata:
+#   name: policies
+#   namespace: flux-system
+# spec:
+#   dependsOn:
+#     - name: policy-template
+#   interval: 5m
+#   sourceRef:
+#     kind: GitRepository
+#     name: platform-team
+#   path: ./infra/policies
+#   prune: true
+#   validation: client
