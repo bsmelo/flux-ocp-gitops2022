@@ -46,7 +46,7 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: policy-template
+  name: policy-template-gatekeeper
   namespace: flux-system
 spec:
   dependsOn:
@@ -66,7 +66,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: policy-template
+    - name: policy-template-gatekeeper
   interval: 5m
   sourceRef:
     kind: GitRepository
