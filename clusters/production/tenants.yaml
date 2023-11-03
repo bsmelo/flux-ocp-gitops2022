@@ -2,12 +2,12 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
   name: tenants-prod
-  namespace: flux-system
+  namespace: prospeccao-stage
 spec:
   interval: 5m
   sourceRef:
     kind: GitRepository
-    name: platform-team
+    name: flux-ocp-gitops2022
   path: ./tenants/production
   prune: true
   validation: client

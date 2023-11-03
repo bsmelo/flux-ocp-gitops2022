@@ -5,14 +5,14 @@
 #   labels:
 #     toolkit.fluxcd.io/tenant: dev-team
 #   name: apps
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  labels:
-    toolkit.fluxcd.io/tenant: dev-team
-  name: dev-team
-  namespace: prospeccao-stage
+# ---
+# apiVersion: v1
+# kind: ServiceAccount
+# metadata:
+#   labels:
+#     toolkit.fluxcd.io/tenant: dev-team
+#   name: dev-team
+#   namespace: prospeccao-stage
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -30,5 +30,5 @@ subjects:
   kind: Group
   name: gf-nupros-ocp4bm2
 - kind: ServiceAccount
-  name: dev-team
+  name: cicd
   namespace: prospeccao-stage
