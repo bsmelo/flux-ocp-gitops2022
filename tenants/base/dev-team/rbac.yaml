@@ -1,10 +1,10 @@
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  labels:
-    toolkit.fluxcd.io/tenant: dev-team
-  name: apps
+# ---
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   labels:
+#     toolkit.fluxcd.io/tenant: dev-team
+#   name: apps
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -12,7 +12,7 @@ metadata:
   labels:
     toolkit.fluxcd.io/tenant: dev-team
   name: dev-team
-  namespace: apps
+  namespace: prospeccao-stage
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -20,15 +20,15 @@ metadata:
   labels:
     toolkit.fluxcd.io/tenant: dev-team
   name: dev-team-reconciler
-  namespace: apps
+  namespace: prospeccao-stage
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: admin
+  name: project-owner
 subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: Group
-  name: dev-team
+  name: gf-nupros-ocp4bm2
 - kind: ServiceAccount
   name: dev-team
-  namespace: apps
+  namespace: prospeccao-stage
