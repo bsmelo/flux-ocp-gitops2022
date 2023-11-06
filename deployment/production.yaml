@@ -4,9 +4,9 @@ metadata:
   namespace: prospeccao-stage
   name: multi-tenant-production
 spec:
-  timeout: 2m
+  timeout: 1m
   path: ./clusters/production
-  interval: 5m
+  interval: 2m
   prune: true
   force: false
   sourceRef:

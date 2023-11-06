@@ -4,7 +4,7 @@ metadata:
   name: tenants-prod
   namespace: prospeccao-stage
 spec:
-  interval: 5m
+  interval: 2m
   sourceRef:
     kind: GitRepository
     name: flux-ocp-gitops2022

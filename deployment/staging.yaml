@@ -4,9 +4,9 @@ metadata:
   namespace: prospeccao-stage
   name: multi-tenant-staging
 spec:
-  timeout: 2m
+  timeout: 1m
   path: ./clusters/staging
-  interval: 5m
+  interval: 2m
   prune: true
   force: false
   sourceRef:
