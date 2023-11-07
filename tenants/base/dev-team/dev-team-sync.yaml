@@ -16,7 +16,7 @@ metadata:
   name: dev-team
   namespace: prospeccao-stage
 spec:
-  serviceAccountName: deployer
+  serviceAccountName: cicd
   targetNamespace: prospeccao-stage
   interval: 1m
   sourceRef:
