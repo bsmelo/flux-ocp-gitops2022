@@ -10,4 +10,3 @@ spec:
     name: flux-ocp-gitops2022
   path: ./tenants/production
   prune: true
-  validation: client

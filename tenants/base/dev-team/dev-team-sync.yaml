@@ -24,5 +24,3 @@ spec:
     name: flux-ocp-devteam
   path: ./clusters/production
   prune: true
-  force: true
-  validation: client
