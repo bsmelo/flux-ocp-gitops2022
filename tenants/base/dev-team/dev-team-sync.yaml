@@ -16,7 +16,7 @@ metadata:
   name: dev-team
   namespace: prospeccao-stage
 spec:
-  serviceAccountName: default
+  serviceAccountName: deployer
   targetNamespace: prospeccao-stage
   interval: 1m
   sourceRef:
