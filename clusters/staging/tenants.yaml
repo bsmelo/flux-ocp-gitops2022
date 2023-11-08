@@ -1,0 +1,12 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: tenants
+  namespace: prospeccao-stage
+spec:
+  interval: 2m
+  sourceRef:
+    kind: GitRepository
+    name: flux-ocp-gitops2022
+  path: ./tenants/staging
+  prune: true

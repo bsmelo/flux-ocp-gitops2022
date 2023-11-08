@@ -1,0 +1,26 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: flux-ocp-devteam
+  namespace: prospeccao-stage
+spec:
+  interval: 1m0s
+  ref:
+    branch: gitopsdays-2022
+  timeout: 20s
+  url: "https://github.com/bsmelo/flux-ocp-devteam"
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: dev-team
+  namespace: prospeccao-stage
+spec:
+  serviceAccountName: cicd
+  targetNamespace: prospeccao-stage
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: flux-ocp-devteam
+  path: ./clusters/production
+  prune: true
