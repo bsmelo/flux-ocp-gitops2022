@@ -2,7 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
   name: flux-ocp-devteam
-  namespace: prospeccao-stage
+  namespace: testeflux-stage
 spec:
   interval: 1m0s
   ref:
@@ -14,10 +14,10 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
   name: dev-team
-  namespace: prospeccao-stage
+  namespace: testeflux-stage
 spec:
   serviceAccountName: cicd
-  targetNamespace: prospeccao-stage
+  targetNamespace: testeflux-stage
   interval: 1m
   sourceRef:
     kind: GitRepository

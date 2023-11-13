@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
-  namespace: prospeccao-stage
+  namespace: testeflux-stage
   name: flux-ocp-gitops2022
 spec:
   timeout: 20s
@@ -15,7 +15,7 @@ spec:
 # kind: Kustomization
 # metadata:
 #   name: flux-monitoring
-#   namespace: prospeccao-stage
+#   namespace: testeflux-stage
 # spec:
 #   interval: 5m
 #   sourceRef:
